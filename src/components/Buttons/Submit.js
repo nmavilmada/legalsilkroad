@@ -1,11 +1,10 @@
 import React from 'react';
 import './Buttons.css';
 
-export default function Login(props) {
+export default function Submit(props) {
     return (
       <button>{props.label}</button>
     );
   }
   
-  ReactDOM.render(<Login label="Login" />, mountNode);
-  
+  ReactDOM.render(<Submit label="Register" />, mountNode);
