@@ -5,7 +5,7 @@ export default function Submit(props) {
     return (
       <div className="Submit">
         <div>
-      <button>{props.onClick}</button>
+        <button>onClick={props.onClick}</button>
         </div>
       </div>
     );

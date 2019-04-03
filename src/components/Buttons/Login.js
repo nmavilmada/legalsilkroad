@@ -5,7 +5,7 @@ export default function Login(props) {
     return (
       <div className="Login">
         <div>
-      <button>{props.onClick}</button>
+        <button>onClick={props.onClick}</button>
         </div>
       </div>
     );

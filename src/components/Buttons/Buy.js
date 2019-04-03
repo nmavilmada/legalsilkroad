@@ -5,9 +5,8 @@ export default function Buy(props) {
     return (
       <div className="Buy">
         <div>
-      <button>{props.onClick}</button>
+      <button>onClick={props.onClick}</button>
         </div>
       </div>
     );
   }
-  

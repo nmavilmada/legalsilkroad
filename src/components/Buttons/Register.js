@@ -5,7 +5,7 @@ export default function Register(props) {
     return (
       <div className="Register">
         <div>
-      <button>{props.onClick}</button>
+        <button>onClick={props.onClick}</button>
         </div>
       </div>
     );
