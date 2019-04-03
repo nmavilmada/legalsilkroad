@@ -3,9 +3,13 @@ import './Buttons.css';
 
 export default function Login(props) {
     return (
-      <button>{props.label}</button>
+      <div className="Login">
+        <div>
+      <button>{props.onClick}</button>
+        </div>
+      </div>
     );
   }
   
-  ReactDOM.render(<Login label="Login" />, mountNode);
+  
   
