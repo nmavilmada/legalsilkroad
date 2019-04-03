@@ -1,0 +1,7 @@
+.card {
+    display: grid;
+    height: 200px;
+    grid-template-rows: 150px 1fr;
+    grid-template-columns: 1fr;
+    justify-self: center;
+}
