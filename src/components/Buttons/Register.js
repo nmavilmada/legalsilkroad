@@ -3,8 +3,11 @@ import './Buttons.css';
 
 export default function Register(props) {
     return (
-      <button>{props.label}</button>
+      <div className="Register">
+        <div>
+        <button>onClick={props.onClick}</button>
+        </div>
+      </div>
     );
   }
   
-  ReactDOM.render(<Register label="Register" />, mountNode);

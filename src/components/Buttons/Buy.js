@@ -3,8 +3,10 @@ import './Buttons.css';
 
 export default function Buy(props) {
     return (
-      <button>{props.label}</button>
+      <div className="Buy">
+        <div>
+      <button>onClick={props.onClick}</button>
+        </div>
+      </div>
     );
   }
-  
-  ReactDOM.render(<Buy label="Buy" />, mountNode);
