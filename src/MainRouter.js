@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Categories from './containers/Categories';
 import './MainRouter.css';
+import Loginscreen from "./Loginscreen";
 
 
 
@@ -22,6 +23,10 @@ const routes = [
     {
         path: "/login",
         component: () => <h2>Shoelaces</h2>
+    },
+    {   path: "/Login",
+        component: () => <Loginscreen />
+
     }
 ];
 
@@ -34,6 +39,7 @@ function RouterContainer() {
                     <Link to="/">Home</Link>
                     <Link to="/categories">Categories</Link>
                     <Link to="/login">Login</Link>
+                    
                 </div>
 
 

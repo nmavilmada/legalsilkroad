@@ -18,8 +18,8 @@ class Login extends Component {
       <MuiThemeProvider>
         <div>
          <TextField
-           hintText="Enter your College Rollno"
-           floatingLabelText="Student Id"
+           hintText="Enter your User Name"
+           floatingLabelText="User Name"
            onChange = {(event,newValue)=>this.setState({username:newValue})}
            />
          <br/>
@@ -52,8 +52,8 @@ class Login extends Component {
         <MuiThemeProvider>
           <div>
            <TextField
-             hintText="Enter your College Rollno"
-             floatingLabelText="Student Id"
+             hintText="Enter your User Name"
+             floatingLabelText="User Name"
              onChange = {(event,newValue) => this.setState({username:newValue})}
              />
            <br/>
@@ -78,8 +78,8 @@ class Login extends Component {
         <MuiThemeProvider>
           <div>
            <TextField
-             hintText="Enter your College Rollno"
-             floatingLabelText="Teacher Id"
+             hintText="Enter your User Name"
+             floatingLabelText="Seller ID"
              onChange = {(event,newValue) => this.setState({username:newValue})}
              />
            <br/>
@@ -137,8 +137,8 @@ class Login extends Component {
         <MuiThemeProvider>
           <div>
            <TextField
-             hintText="Enter your College Rollno"
-             floatingLabelText="Student Id"
+             hintText="Enter your User Name"
+             floatingLabelText="Buyer Id"
              onChange = {(event,newValue) => this.setState({username:newValue})}
              />
            <br/>
@@ -162,8 +162,8 @@ class Login extends Component {
         <MuiThemeProvider>
           <div>
            <TextField
-             hintText="Enter your College Rollno"
-             floatingLabelText="Teacher Id"
+             hintText="Enter your User Name"
+             floatingLabelText="Seller Id"
              onChange = {(event,newValue) => this.setState({username:newValue})}
              />
            <br/>
@@ -195,8 +195,8 @@ class Login extends Component {
         <div>
         <p>Login as:</p>
         <DropDownMenu value={this.state.menuValue} onChange={(event,index,value)=>this.handleMenuChange(value)}>
-          <MenuItem value={1} primaryText="Student" />
-          <MenuItem value={2} primaryText="Teacher" />
+          <MenuItem value={1} primaryText="Buyer" />
+          <MenuItem value={2} primaryText="Seller" />
         </DropDownMenu>
         </div>
         </MuiThemeProvider>

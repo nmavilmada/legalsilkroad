@@ -62,16 +62,16 @@ class Register extends Component {
   render() {
     // console.log("props",this.props);
     var userhintText,userLabel;
-    if(this.props.role === "student"){
+    if(this.props.role === "Buyer"){
       // eslint-disable-next-line no-unused-expressions
       // eslint-disable-next-line no-sequences
-      userhintText="Enter your Student Id";
-      userLabel="Student Id"
+      userhintText="Enter your Buyer Id";
+      userLabel="Buyer Id"
     }
     else{
       // eslint-disable-next-line no-unused-expressions
-      userhintText="Enter your Teacher Id";
-      userLabel="Teacher Id"
+      userhintText="Enter your Buyer Id";
+      userLabel="Buyer Id"
     }
     return (
       <div>
