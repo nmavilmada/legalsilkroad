@@ -1,6 +1,6 @@
 var express    = require("express");
-var login = require('./routes/loginroutes');
-var upload = require('./routes/fileroutes');
+var login = require('./loginroutes');
+var upload = require('./fileroutes');
 var bodyParser = require('body-parser');
 /*
 Module:multer

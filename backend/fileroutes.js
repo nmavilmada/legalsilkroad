@@ -11,7 +11,7 @@ var connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'password',
-  database: 'cloudprint',
+  database: 'mysql',
   insecureAuth: false
 });
 connection.connect(function (err) {
