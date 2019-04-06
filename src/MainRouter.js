@@ -16,7 +16,7 @@ const routes = [
     },
     {
         path: "/login",
-        component: () => <h2>Shoelaces</h2>
+        component: () => <h2>Login</h2>
     }
 ];
 
@@ -43,6 +43,8 @@ function RouterContainer() {
                         />
                     ))}
                 </div>
+
+            
 
                 <div className="footer">
                     Some Footer
