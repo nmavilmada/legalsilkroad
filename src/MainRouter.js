@@ -3,6 +3,11 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Categories from './containers/Categories';
 import './MainRouter.css';
 import Loginscreen from "./Loginscreen";
+import Register from './Register';
+import UploadPage from './UploadPage';
+import UploadScreen from './UploadScreen';
+import PastFiles from "./Pastfiles";
+
 
 
 
@@ -22,11 +27,32 @@ const routes = [
     },
     {
         path: "/login",
-        component: () => <h2>Shoelaces</h2>
+        component: () => <h2>shoelaces</h2>
     },
-    {   path: "/Login",
+    {   
+        path: "/Login",
         component: () => <Loginscreen />
 
+    },
+    {
+        path: "/Register",
+        component: () => <Register />
+    },
+    {
+        path: "/UploadPage",
+        component: () => <UploadPage />
+    },
+    {
+        path: "/UploadScreen",
+        component: () => <UploadScreen />
+    },
+    {
+        path: "/Pastfiles",
+        component: () => <PastFiles />
+    },
+    {
+        path: "/server",
+        component: () => <server />
     }
 ];
 

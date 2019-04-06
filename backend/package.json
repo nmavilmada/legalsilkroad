@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "proxy": "http://localhost:4000"
     },
     "author": "Saurabh Mhatre",
     "license": "ISC",
@@ -19,5 +20,6 @@
       "node-session": "^1.2.1",
       "promise": "^7.1.1",
       "rmfr": "^1.0.2"
+     
     }
   }

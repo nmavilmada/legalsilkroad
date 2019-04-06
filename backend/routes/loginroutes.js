@@ -1,13 +1,15 @@
 var mysql = require('mysql');
 // var bcrypt = require('bcrypt');
 var jsonfile = require('jsonfile');
+
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
-  password : 'root@123',
+  password : 'password',
   database : 'cloudprint',
   insecureAuth: false
 });
+
 connection.connect(function(err){
 if(!err) {
     console.log("Database is connected ... nn");
@@ -64,8 +66,8 @@ exports.login = function(req,res){
   }else{
     // console.log('The solution is: ', results[0].password,req.body.password,req.body.role);
     if(results.length >0){
-      if(results[0].password == req.body.password){
-        if(results[0].role == req.body.role){
+      if(results[0].password === req.body.password){
+        if(results[0].role === req.body.role){
           var file = './userdata/userid.json'
           var obj = {userid: req.body.userid}
           jsonfile.writeFile(file, obj, function (err) {
