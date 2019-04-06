@@ -7,7 +7,6 @@ var jsonfile = require('jsonfile');
 var mysql = require('mysql');
 // var bcrypt = require('bcrypt');
 var jsonfile = require('jsonfile');
-
 var connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
