@@ -2,6 +2,7 @@ var express    = require("express");
 var login = require('./loginroutes');
 var upload = require('./fileroutes');
 var bodyParser = require('body-parser');
+
 /*
 Module:multer
 multer is middleware used to handle multipart form data
@@ -10,6 +11,8 @@ multer is middleware used to handle multipart form data
 var multer = require('multer');
 var multerupload = multer({ dest: 'fileprint/' })
 var app = express();
+
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -33,4 +36,5 @@ router.post('/fileprint',multerupload.any(),upload.fileprint);
 router.get('/fileretrieve',upload.fileretrieve);
 app.use('/api', router);
 app.listen(4000);
+
 

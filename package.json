@@ -2,6 +2,7 @@
   "name": "legalsilkroad",
   "version": "0.1.0",
   "private": true,
+ 
   "dependencies": {
     "axios": "^0.18.0",
     "material-ui": "^0.20.2",
@@ -17,9 +18,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --passWithNoTests",
-    "eject": "react-scripts eject",
-    "proxy": "http://localhost:4000/api"
+    "eject": "react-scripts eject"
+    
   },
+  "proxy": "http://localhost:4000",
   "eslintConfig": {
     "extends": "react-app"
   },

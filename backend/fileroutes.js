@@ -6,12 +6,12 @@ var async = require('async');
 var jsonfile = require('jsonfile');
 var mysql = require('mysql');
 // var bcrypt = require('bcrypt');
-var jsonfile = require('jsonfile');
+
 var connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'password',
-  database: 'mysql',
+  database: 'collegeusers',
   insecureAuth: false
 });
 connection.connect(function (err) {

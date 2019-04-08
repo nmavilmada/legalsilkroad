@@ -67,12 +67,12 @@ class Register extends Component {
       // eslint-disable-next-line no-unused-expressions
       // eslint-disable-next-line no-sequences
       userhintText="Enter your Buyer Id";
-      userLabel="Buyer Id"
+      userLabel="Email Id"
     }
     else{
       // eslint-disable-next-line no-unused-expressions
       userhintText="Enter your Buyer Id";
-      userLabel="Buyer Id"
+      userLabel="Email Id"
     }
     return (
       <div>

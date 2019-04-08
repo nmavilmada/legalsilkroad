@@ -45,8 +45,8 @@ class Login extends Component {
   componentWillMount(){
   // console.log("willmount prop values",this.props);
   if(this.props.role !== undefined){
-    if(this.props.role === 'student'){
-      console.log("in student componentWillMount");
+    if(this.props.role === 'Buyer'){
+      console.log("in Buyer componentWillMount");
       var localloginComponent=[];
       localloginComponent.push(
         <MuiThemeProvider>
@@ -68,10 +68,10 @@ class Login extends Component {
          </div>
          </MuiThemeProvider>
       )
-      this.setState({menuValue:1,loginComponent:localloginComponent,loginRole:'student'})
+      this.setState({menuValue:1,loginComponent:localloginComponent,loginRole:'Buyer'})
     }
-    else if(this.props.role === 'teacher'){
-      console.log("in teacher componentWillMount");
+    else if(this.props.role === 'Seller'){
+      console.log("in Seller componentWillMount");
       // eslint-disable-next-line no-redeclare
       var localloginComponent=[];
       localloginComponent.push(
@@ -94,7 +94,7 @@ class Login extends Component {
          </div>
          </MuiThemeProvider>
       )
-      this.setState({menuValue:2,loginComponent:localloginComponent,loginRole:'teacher'})
+      this.setState({menuValue:2,loginComponent:localloginComponent,loginRole:'Seller'})
     }
   }
   }
@@ -112,7 +112,7 @@ class Login extends Component {
        console.log("Login successfull");
        var uploadScreen=[];
        uploadScreen.push(<UploadPage appContext={self.props.appContext} role={self.state.loginRole}/>)
-       self.props.appContext.setState({loginPage:[],uploadScreen:uploadScreen})
+       self.props.appContext.setState({login:[],uploadScreen:uploadScreen})
      }
      else if(response.data.code === 204){
        console.log("Username password do not match");
@@ -132,7 +132,7 @@ class Login extends Component {
     var loginRole;
     if(value===1){
       var localloginComponent=[];
-      loginRole='student';
+      loginRole='Buyer';
       localloginComponent.push(
         <MuiThemeProvider>
           <div>
@@ -157,7 +157,7 @@ class Login extends Component {
     else if(value === 2){
       // eslint-disable-next-line no-redeclare
       var localloginComponent=[];
-      loginRole='teacher';
+      loginRole='Seller';
       localloginComponent.push(
         <MuiThemeProvider>
           <div>
