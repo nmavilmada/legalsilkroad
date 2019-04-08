@@ -13,11 +13,8 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "react-tap-event-plugin": "^3.0.3",
-<<<<<<< HEAD
-    "scriptloader": "^1.1.2"
-=======
+    "scriptloader": "^1.1.2",
     "superagent": "^5.0.2"
->>>>>>> keith
   },
   "scripts": {
     "start": "react-scripts start",
