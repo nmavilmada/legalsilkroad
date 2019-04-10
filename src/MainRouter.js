@@ -5,9 +5,7 @@ import './MainRouter.css';
 import Loginscreen from "./Loginscreen";
 
 
-
-
-
+// Routes
 const routes = [
     {
         path: "/",
@@ -40,7 +38,6 @@ function RouterContainer() {
                     <Link to="/login">Login</Link>
                     
                 </div>
-
 
                 <div className="main">
                     {routes.map((route, index) => (

@@ -5,25 +5,31 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import './App.css';
 import LoginScreen from './Loginscreen';
+import PaypalButton from './components/Buttons/PayPalButton';
+
 
 injectTapEventPlugin();
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
-      loginPage:[],
-      uploadScreen:[]
+    this.state = {
+      loginPage: [],
+      uploadScreen: []
     }
   }
-  componentWillMount(){
-    var loginPage =[];
-    loginPage.push(<LoginScreen appContext={this}/>);
+  componentWillMount() {
+    var loginPage = [];
+    loginPage.push(<LoginScreen appContext={this} />);
     this.setState({
-                  loginPage:loginPage
-                    })
+      loginPage: loginPage
+    })
   }
   render() {
+ 
+
+
+
     return (
       <div className="App">
         {this.state.loginPage}

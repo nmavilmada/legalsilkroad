@@ -1,111 +1,42 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import scriptLoader from 'react-async-script-loader';
-import { ActionYoutubeSearchedFor } from 'material-ui/svg-icons';
+import React, { Component } from 'react'
+import PayPal from './PayPal'
+// Paypal Component
+const CLIENT = {
+    sandbox: 'AXBgofu5NzNZUucVXSTLl1LcY4IkG_fVW-3W5M0AtvpDVZXMslH9aiZfdNSfM67Gj7waym2yJclwakv8',
+    production: 'AY1TqwhuMOyxbLTt18ZcswnNCzhr-hMkBNYblgpHaKuLMXWEWvBX6-kX4YlsKQBeCB_5MK5ZA-hfZpEu'
+  };
+  
+  const ENV = process.env.NODE_ENV === 'production'
+    ? 'production'
+    : 'sandbox';
+    
+    export class PayPalButton extends Component {
+      render() {
 
-class PayPalButton extends React.Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      showButton: false,
-    };
-
-    window.React = React;
-    window.ReactDOM = ReactDOM;
-
-    componentDidMount() {
-
-      const {
-        isScriptLoaded,
-        isScriptLoadSucceed
-      } = this.props;
-
-      if (isScriptLoaded && isScriptLoadSucceed) {
-        this.setState({ showButton: true });
+        const onSuccess = (payment) =>
+        console.log('Successful payment!', payment);
+  
+      const onError = (error) =>
+        console.log('Erroneous payment OR failed to load script!', error);
+  
+      const onCancel = (data) =>
+        console.log('Cancelled payment!', data);
+        return (
+            <div>
+            <PayPal
+              client={CLIENT}
+              env={ENV}
+              commit={true}
+              currency={'USD'}
+              total={100}
+              onSuccess={onSuccess}
+              onError={onError}
+              onCancel={onCancel}
+            />
+          </div>
+        )
       }
-
-    };
-
-    componentWillReceiveProps(nextProps){
-      const
-        { isScriptLoaded,
-          isScriptLoadSucceed,
-        } = nextProps;
-
-      const isLoadedButWasntLoadedBefore =
-        !this.state.showButton &&
-        !this.props.isScriptLoaded &&
-        isScriptLoadSucceed;
-
-      if (isLoadedButWasntLoadedBefore) {
-        if (isScriptLoadSucceed) {
-          this.setState({ showButton: true });
-        }
-      }
-
     }
-  }
-
-  render() {
-    const {
-      total,
-      currency,
-      env,
-      commit,
-      onSuccess,
-      onError,
-      onCancel,
-
-    } = this.props;
-
-    const {
-      showButton,
-    } = this.state;
-
-    const payment = () =>
-      paypal.rest.payment.create(env, client, {
-        transactions: [
-          {
-            amount = {
-              total,
-              currency,
-            }
-          },
-        ],
-      });
-    const onAuthorize = (data,actions) =>
-    actions.payment.execute ()
-    .then(()=> {
-      const payment = {
-        paid : true,
-        cacelled: false,
-        payerID : data.payerID,
-        paymentID : data.paymentID,
-        paymentToken : data.paymentToken,
-        returnUrl: data.returnUrl,
-      };
-
-      onSuccess(payment);
-
-    });
-
-    return (
-      <div>
-        {showButton && <paypal.Button.react
-          env={env}
-          client={client}
-          commit={commit}
-          payment={payment}
-          onAuthorize={onAuthorize}
-          onCancel={onCancel}
-          onError={onError}
-        />}
-        }
-      </div>
-    )
-  }
-}
-
-export default scriptLoader('https://www.paypalobjects.com/api.checkout.js')(PayPalButton);
+    
+    export default PayPalButton
+    

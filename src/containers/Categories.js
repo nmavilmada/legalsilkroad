@@ -2,6 +2,7 @@ import React from 'react';
 import './Categories.css';
 import ProductCard from '../components/ProductCard';
 
+
 export default function Categories() {
     return (
         <div className="categories">
