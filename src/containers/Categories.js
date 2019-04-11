@@ -11,8 +11,10 @@ export default function Categories() {
                     return (
                         <ProductCard
                             key={a}
+                            id={a}
                             img={`https://picsum.photos/150/?image=${a}`}
                             description={`Some Name ${a}`}
+                            price={a * 10}
                             name={a}
                         />
                     )
