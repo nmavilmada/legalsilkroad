@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Categories from './containers/Categories';
 import './MainRouter.css';
 import Loginscreen from "./Loginscreen";
+import CartContext from './CartContext';
+import Cart from './containers/Cart';
 
 
 // Routes
@@ -20,6 +22,10 @@ const routes = [
         path: "/login",
         component: () => <h2>shoelaces</h2>
     },
+    {
+        path: "/cart",
+        component: () => <Cart />
+    },
     {   
         path: "/Login",
         component: () => <Loginscreen />
@@ -28,6 +34,7 @@ const routes = [
 ];
 
 function RouterContainer() {
+    const cart = useContext(CartContext);
     return (
         <Router>
             <div className="container">
@@ -35,6 +42,7 @@ function RouterContainer() {
                 <div className="header">
                     <Link to="/">Home</Link>
                     <Link to="/categories">Categories</Link>
+                    <Link to="/cart">Cart ({cart.products.length})</Link>
                     <Link to="/login">Login</Link>
                     
                 </div>

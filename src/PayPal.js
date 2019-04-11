@@ -13,38 +13,35 @@ class PayPal extends React.Component {
 
     window.React = React;
     window.ReactDOM = ReactDOM;
+  }
 
-    componentDidMount() {
+  componentDidMount() {
 
-      const {
-        isScriptLoaded,
-        isScriptLoadSucceed
-      } = this.props;
+    const { isScriptLoaded, isScriptLoadSucceed } = this.props;
 
-      if (isScriptLoaded && isScriptLoadSucceed) {
+    if (isScriptLoaded && isScriptLoadSucceed) {
+      this.setState({ showButton: true });
+    }
+
+  };
+
+  componentWillReceiveProps(nextProps) {
+    const
+      { isScriptLoaded,
+        isScriptLoadSucceed,
+      } = nextProps;
+
+    const isLoadedButWasntLoadedBefore =
+      !this.state.showButton &&
+      !this.props.isScriptLoaded &&
+      isScriptLoadSucceed;
+
+    if (isLoadedButWasntLoadedBefore) {
+      if (isScriptLoadSucceed) {
         this.setState({ showButton: true });
       }
-
-    };
-
-    componentWillReceiveProps(nextProps){
-      const
-        { isScriptLoaded,
-          isScriptLoadSucceed,
-        } = nextProps;
-
-      const isLoadedButWasntLoadedBefore =
-        !this.state.showButton &&
-        !this.props.isScriptLoaded &&
-        isScriptLoadSucceed;
-
-      if (isLoadedButWasntLoadedBefore) {
-        if (isScriptLoadSucceed) {
-          this.setState({ showButton: true });
-        }
-      }
-
     }
+
   }
 
   render() {
@@ -67,42 +64,42 @@ class PayPal extends React.Component {
       paypal.rest.payment.create(env, client, {
         transactions: [
           {
-            amount = {
+            amount : {
               total,
               currency,
             }
           },
         ],
       });
-    const onAuthorize = (data,actions) =>
-    actions.payment.execute ()
-    .then(()=> {
-      const payment = {
-        paid : true,
-        cacelled: false,
-        payerID : data.payerID,
-        paymentID : data.paymentID,
-        paymentToken : data.paymentToken,
-        returnUrl: data.returnUrl,
-      };
+    const onAuthorize = (data, actions) =>
+      actions.payment.execute()
+        .then(() => {
+          const payment = {
+            paid: true,
+            cacelled: false,
+            payerID: data.payerID,
+            paymentID: data.paymentID,
+            paymentToken: data.paymentToken,
+            returnUrl: data.returnUrl,
+          };
 
-      onSuccess(payment);
+          onSuccess(payment);
 
-    });
+        });
 
     return (
       <div>
-        {showButton && <paypal.Button.react
-          env={env}
-          client={client}
-          commit={commit}
-          payment={payment}
-          onAuthorize={onAuthorize}
-          onCancel={onCancel}
-          onError={onError}
+        {/* {showButton && <paypal.Button.react */}
+        env={env}
+        client={client}
+        commit={commit}
+        payment={payment}
+        onAuthorize={onAuthorize}
+        onCancel={onCancel}
+        onError={onError}
         />}
         }
-      </div>
+        </div>
     )
   }
 }
