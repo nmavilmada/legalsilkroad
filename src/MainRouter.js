@@ -3,12 +3,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Categories from './containers/Categories';
 import './MainRouter.css';
 import Loginscreen from "./Loginscreen";
-<<<<<<< Updated upstream
 import CartContext from './CartContext';
 import Cart from './containers/Cart';
-=======
-import Navbar from "./components/Navbar";
->>>>>>> Stashed changes
 
 
 // Routes
