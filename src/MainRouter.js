@@ -5,7 +5,9 @@ import './MainRouter.css';
 import Loginscreen from "./Loginscreen";
 import CartContext from './CartContext';
 import Cart from './containers/Cart';
-import Navbar from './components/Navbar/index';
+
+import Navbar from './components/Navbar';
+import Footer from "./components/Footer";
 
 // Routes
 const routes = [
@@ -41,10 +43,21 @@ function RouterContainer() {
     const cart = useContext(CartContext);
     return (
         <Router>
-           
-            <Navbar />
-              
-              <div className="main">
+
+        <Navbar />
+            <div className="container">
+            
+                <div className="header">
+                
+                    <Link to="/">Home</Link>
+                    <Link to="/categories">Categories</Link>
+                    <Link to="/cart">Cart ({cart.products.length})</Link>
+                    <Link to="/login">Login</Link>
+                    
+                </div>
+                   
+                <div className="main">
+
                     {routes.map((route, index) => (
                         
                         <Route
@@ -55,6 +68,7 @@ function RouterContainer() {
                         />
                     ))}
                 </div>
+
 
                 <footer class="page-footer">
           <div class="container">
@@ -78,9 +92,10 @@ function RouterContainer() {
             <div class="container">
             © 2014 Copyright Text
             <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+
             </div>
-          </div>
-        </footer>
+          
+       
            
         </Router>
     );
