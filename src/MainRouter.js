@@ -12,7 +12,7 @@ const routes = [
     {
         path: "/",
         exact: true,
-        component: () => <h2>Home</h2>
+        component: () => <Categories />
     },
     {
         path: "/categories",
@@ -41,24 +41,10 @@ function RouterContainer() {
     const cart = useContext(CartContext);
     return (
         <Router>
-<<<<<<< Updated upstream
-            <div className="container">
-
-                <div className="header">
-                    <Link to="/">Home</Link>
-                    <Link to="/categories">Categories</Link>
-                    <Link to="/cart">Cart ({cart.products.length})</Link>
-                    <Link to="/login">Login</Link>
-                    
-                </div>
-
-                <div className="main">
-=======
            
             <Navbar />
               
               <div className="main">
->>>>>>> Stashed changes
                     {routes.map((route, index) => (
                         
                         <Route
@@ -70,13 +56,6 @@ function RouterContainer() {
                     ))}
                 </div>
 
-<<<<<<< Updated upstream
-            
-
-                <div className="footer">
-                    Some Footer
-                </div>
-=======
                 <footer class="page-footer">
           <div class="container">
             <div class="row">
@@ -99,7 +78,6 @@ function RouterContainer() {
             <div class="container">
             © 2014 Copyright Text
             <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
->>>>>>> Stashed changes
             </div>
           </div>
         </footer>
