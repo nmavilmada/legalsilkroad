@@ -5,7 +5,7 @@ import './MainRouter.css';
 import Loginscreen from "./Loginscreen";
 import CartContext from './CartContext';
 import Cart from './containers/Cart';
-
+import Navbar from './components/Navbar/index';
 
 // Routes
 const routes = [
