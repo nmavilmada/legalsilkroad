@@ -12,7 +12,7 @@ const routes = [
     {
         path: "/",
         exact: true,
-        component: () => <h2>Home</h2>
+        component: () => <Categories />
     },
     {
         path: "/categories",
