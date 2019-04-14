@@ -1,31 +1,31 @@
 import React from 'react';
 
-var apiBaseUrl = "http://localhost:4000/api/";
+// var apiBaseUrl = "http://localhost:4000/api/";
 
-class Cart extends Component {
-    constructor(props){
-      super(props);
-      var localcartComponent=[];
-      localcartComponent.push()
+// class Cart extends Component {
+//     constructor(props){
+//       super(props);
+//       var localcartComponent=[];
+//       localcartComponent.push()
       
-    this.state={
-      id:'',
-      name_product:'',
-      quantity:'',
-      sub_total:'',
-      cartComponent:localcartComponent,
-      loginRole:'student'
-    }
-  }
+//     this.state={
+//       id:'',
+//       name_product:'',
+//       quantity:'',
+//       sub_total:'',
+//       cartComponent:localcartComponent,
+//       loginRole:'student'
+//     }
+//   }
 
-handleClick(event){
-    var self = this;
-    var payload={
-      "id":this.state.id,
-	  "name_product":this.state.name_product,
-      "quantity":this.state.quantity,
-      "sub_total":this.state.sub_total
-    }
+// handleClick(event){
+//     var self = this;
+//     var payload={
+//       "id":this.state.id,
+// 	  "name_product":this.state.name_product,
+//       "quantity":this.state.quantity,
+//       "sub_total":this.state.sub_total
+//     }
 
 
 

@@ -1,13 +1,11 @@
 import React, { useContext } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Categories from './containers/Categories';
-import './MainRouter.css';
+ import MainRouter from './MainRouter.css';
 import Loginscreen from "./Loginscreen";
 import CartContext from './CartContext';
 import Cart from './containers/Cart';
 
-import Navbar from './components/Navbar';
-import Footer from "./components/Footer";
 
 // Routes
 const routes = [
@@ -22,7 +20,7 @@ const routes = [
     },
     {
         path: "/login",
-        component: () => <h2></h2>
+        component: () => <h2>Login Page</h2>
     },
     {
         path: "/cart",
@@ -33,20 +31,15 @@ const routes = [
         component: () => <Loginscreen />
 
     },
-    {
-        path: "/Navbar",
-        component: () => <Navbar />
-    }
+
 ];
 
 function RouterContainer() {
     const cart = useContext(CartContext);
     return (
         <Router>
-
-        <Navbar />
             <div className="container">
-            
+     
                 <div className="header">
                 
                     <Link to="/">Home</Link>
@@ -69,34 +62,10 @@ function RouterContainer() {
                     ))}
                 </div>
 
-
-                <footer class="page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
-              </div>
+                <div className="footer">
+                    Some Footer
+                </div>
             </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-
-            </div>
-          
-       
-           
         </Router>
     );
 }
