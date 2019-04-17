@@ -49,4 +49,8 @@ handleClick(event){
 }
 
 
-export default Cart;
+export default React.createContext({
+  prodcuts: [],
+  addProduct: (p) => {},
+  removeProduct: (id) => {}
+});

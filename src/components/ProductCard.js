@@ -5,7 +5,7 @@ import CartContext from '../CartContext';
 
 export default function ProductCard(props) {
     const cart = useContext(CartContext);
-    const itemCount = cart.filter(p => p.id === props.id).length;
+    const itemCount = cart.products.filter(p => p.id === props.id).length;
     return (
         <div className="card">
             <div>
