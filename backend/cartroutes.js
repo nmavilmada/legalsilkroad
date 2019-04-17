@@ -29,9 +29,9 @@ var connection = mysql.createConnection({
             "sub_total":req.body.sub_total
            }
 
-           axios.post(apiBaseUrl+'cart', payload)
-           .then(function (response) {
-             console.log(response);
+          //  axios.post(apiBaseUrl+'cart', payload)
+          //  .then(function (response) {
+          //    console.log(response);
 
          connection.query('INSERT INTO purchase_cart SET ?',users, function (error, results, fields) {
          if (error) {
@@ -48,7 +48,4 @@ var connection = mysql.createConnection({
                });
          }
          });
-        // });
-      
-      
         }

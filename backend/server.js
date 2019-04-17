@@ -2,6 +2,7 @@ var express    = require("express");
 var login = require('./loginroutes');
 var upload = require('./fileroutes');
 var bodyParser = require('body-parser');
+var CartContext = require('./cartroutes');
 
 /*
 Module:multer
@@ -27,7 +28,7 @@ var router = express.Router();
 router.get('/', function(req, res) {
     res.json({ message: 'welcome to our upload module apis' });
 });
-
+router.post('/CartContext');
 //route to handle user registration
 router.post('/register',login.register);
 router.post('/login',login.login);
