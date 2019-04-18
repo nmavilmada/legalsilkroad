@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "file-loader": "^3.0.1",
     "material-ui": "^0.20.2",
     "react": "^16.8.6",
     "react-async-script-loader": "^0.3.0",
@@ -30,5 +31,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {}
 }

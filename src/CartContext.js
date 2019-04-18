@@ -1,6 +1,5 @@
 
 import axios from 'axios';
-// eslint-disable-next-line no-unused-vars
 import React, { Component } from 'react';
 
 var apiBaseUrl = "http://localhost:4000/api/";

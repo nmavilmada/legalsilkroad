@@ -21,7 +21,7 @@ var connection = mysql.createConnection({
         // console.log("req",req.body);
         var today = new Date();
         // bcrypt.hash(req.body.password, 5, function( err, bcryptedPassword) {
-         //save to db
+        //  save to db
          var users={
             "id":req.body.id,
             "name_product":req.body.name_product,
@@ -47,5 +47,5 @@ var connection = mysql.createConnection({
              "success":"user registered sucessfully"
                });
          }
-         });
         }
+         
