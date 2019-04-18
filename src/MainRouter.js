@@ -53,7 +53,7 @@ function RouterContainer() {
                 
                     <Link to="/">Home</Link>
                     <Link to="/categories">Categories</Link>
-                    <Link to="/cart">Cart</Link>
+                    <Link to="/cart">Cart {cart.products.length}</Link>
                     <Link to="/login">Login</Link>
                     
                 </div>

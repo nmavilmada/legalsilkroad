@@ -50,7 +50,7 @@ handleClick(event){
 
 
 export default React.createContext({
-  prodcuts: [],
+  products: [],
   addProduct: (p) => {},
   removeProduct: (id) => {}
 });
