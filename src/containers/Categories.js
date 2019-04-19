@@ -1,21 +1,22 @@
 import React from 'react';
 import './Categories.css';
 import ProductCard from '../components/ProductCard';
+import { products, categories } from '../data';
 
 
 export default function Categories() {
     return (
         <div className="categories">
             {
-                Array.from(Array(32).keys()).map(a => {
+                products.map((a, i) => {
                     return (
                         <ProductCard
-                            key={a}
-                            id={a}
-                            img={`https://picsum.photos/150/?image=${a}`}
-                            description={`Some Name ${a}`}
-                            price={a * 10}
-                            name={a}
+                            key={a.ProductDescripton}
+                            id={a.ProductID}
+                            img={a.ProductImage}
+                            description={a.ProductDescripton}
+                            price={i * 10}
+                            name={a.ProductName}
                         />
                     )
                 })

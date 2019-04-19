@@ -5,6 +5,7 @@ import Loginscreen from "./Loginscreen";
 import CartContext from './CartContext';
 import Cart from './containers/Cart';
 import Navbar from './components/Navbar';
+import './MainRouter.css';
 
 
 
@@ -46,16 +47,11 @@ function RouterContainer() {
     const cart = useContext(CartContext);
     return (
         <Router>
-            <Navbar />
+            
             <div className="container">
-     
+
                 <div className="header">
-                
-                    <Link to="/">Home</Link>
-                    <Link to="/categories">Categories</Link>
-                    <Link to="/cart">Cart {cart.products.length}</Link>
-                    <Link to="/login">Login</Link>
-                    
+                    <Navbar />
                 </div>
                    
                 <div className="main">

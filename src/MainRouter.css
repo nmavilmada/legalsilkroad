@@ -1,12 +1,12 @@
 .header {
     grid-area: header;
-    background-color: rgb(35, 35, 74);
+    /* background-color: rgb(35, 35, 74); */
     color: aliceblue;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     list-style-type: none;
-    padding: 0 20px;
+    /* padding: 0 20px; */
     height: 100%;
     align-items: center;
     grid-row: 1;
@@ -33,7 +33,7 @@
 .container {
     display: grid;
     height: 100vh;
-    grid-template-rows: 50px 1fr 30px;
+    grid-template-rows: 72px 1fr 30px;
     grid-template-areas: 
         "header" 
         "main" 
