@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 import axios from 'axios';
 import React, { Component } from 'react';
@@ -48,9 +47,6 @@ handleClick(event){
 }
 }
 
-=======
-import React from 'react';
->>>>>>> 6df07cc7f4c1e9882bd71997aad1722cea1a00f7
 
 export default React.createContext({
   products: [],
