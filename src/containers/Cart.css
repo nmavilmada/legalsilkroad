@@ -2,8 +2,13 @@
     display: grid;
     grid-template-columns: repeat(6 ,1fr);
     grid-template-rows: auto;
+    grid-row-gap: 40px;
 }
 
 .total-row {
     border-top: 1px solid #efefef;
+}
+
+.line {
+    /* border-bottom: 1px solid; */
 }

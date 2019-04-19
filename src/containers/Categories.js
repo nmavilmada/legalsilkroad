@@ -1,21 +1,30 @@
 import React from 'react';
 import './Categories.css';
 import ProductCard from '../components/ProductCard';
+import { products } from '../data';
 
+function filterProducts(p, category) {
+    if (category) {
+        return p.ProductCategory === category;
+    }
+    return true;
+}
 
-export default function Categories() {
+export default function Categories({match}) {
+    const category = match && match.params.cat; 
+    const filteredProducts = products.filter(p => filterProducts(p, category));
     return (
         <div className="categories">
             {
-                Array.from(Array(32).keys()).map(a => {
+                filteredProducts.map((a, i) => {
                     return (
                         <ProductCard
-                            key={a}
-                            id={a}
-                            img={`https://picsum.photos/150/?image=${a}`}
-                            description={`Some Name ${a}`}
-                            price={a * 10}
-                            name={a}
+                            key={a.ProductDescripton}
+                            id={a.ProductID}
+                            img={a.ProductImage}
+                            description={a.ProductDescripton}
+                            price={i * 10}
+                            name={a.ProductName}
                         />
                     )
                 })
