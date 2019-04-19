@@ -1,14 +1,22 @@
 import React from 'react';
 import './Categories.css';
 import ProductCard from '../components/ProductCard';
-import { products, categories } from '../data';
+import { products } from '../data';
 
+function filterProducts(p, category) {
+    if (category) {
+        return p.ProductCategory === category;
+    }
+    return true;
+}
 
-export default function Categories() {
+export default function Categories({match}) {
+    const category = match && match.params.cat; 
+    const filteredProducts = products.filter(p => filterProducts(p, category));
     return (
         <div className="categories">
             {
-                products.map((a, i) => {
+                filteredProducts.map((a, i) => {
                     return (
                         <ProductCard
                             key={a.ProductDescripton}

@@ -1,9 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import logo from './logo.png';
+// import logo from './logo.png';
 import "./style.css";
 import CartContext from '../../CartContext';
+import { categories } from '../../data';
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navbar() {
@@ -21,10 +22,11 @@ function Navbar() {
             <span className="icon-bar"></span>
           </button>
           <a href="#" className="navbar-brand">LegalSilkRoad</a>
-          <img scr={'logo'} alt="logo" />
+          <div className="logo" />
+          {/* <img scr={'https://developer.mozilla.org/static/img/web-docs-sprite.22a6a085cf14.svg'} alt="logo" width={'40px'} height={'40px'} /> */}
         </div>
         {/* <!-- Collection of nav links, forms, and other content for toggling --> */}
-        <div id="navbarCollapse" className="collapse navbar-collapse">
+        <div className="nav-container">
           <ul className="nav navbar-nav">
             <li className="nav-item">
               <Link
@@ -42,17 +44,23 @@ function Navbar() {
 
             <li className="nav-item"></li>
 
-
-            <li><Link to="/categories">Categories</Link></li>
-
-
-
+            <li className="dropdown">
+                <Link to="/categories" data-toggle="dropdown">Categories <b className="caret"></b></Link>
+                    <ul className="dropdown-menu">
+                    <li><Link to={`/categories`}>All</Link></li>
+                      {
+                        categories.map(c => <li key={c}><Link to={`/categories/${c}`}>{c}</Link></li>)
+                      }
+                    </ul>
+                </li>
 
             <li className="dropdown">
               <Link to="/cart">Cart {cart.products.length}</Link>
             </li>
-          </ul>
-          <form className="navbar-form navbar-left">
+
+            
+            <li>
+            <form className="navbar-form navbar-left">
             <div className="input-group">
               <input type="text" className="form-control" placeholder="Search"></input>
               <span className="input-group-btn">
@@ -60,18 +68,15 @@ function Navbar() {
               </span>
             </div>
           </form>
-          <ul className="nav-item">
-            <Link
-              to="/login"
-              className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}
-            >
-              <ul className="nav navbar-nav navbar-right">
-
-                <li>Login</li>
-              </ul>
-
-            </Link>
+            </li>
           </ul>
+
+          <ul className="nav navbar-nav">
+          <li className="dropdown">
+              <Link to="/login">Login</Link>
+            </li>
+          </ul>
+          
         </div>
       </nav>
     </div>

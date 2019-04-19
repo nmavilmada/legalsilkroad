@@ -7,6 +7,7 @@ import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import axios from 'axios';
 import UploadPage from './UploadPage';
+import './Login.css';
 
 var apiBaseUrl = "http://localhost:4000/api/";
 
@@ -187,22 +188,24 @@ class Login extends Component {
   }
   render() {
     return (
-      <div>
-        <MuiThemeProvider>
-          <AppBar
-            title="Login"
-          />
-        </MuiThemeProvider>
-        <MuiThemeProvider>
-          <div>
-            <p>Login as:</p>
-            <DropDownMenu value={this.state.menuValue} onChange={(event, index, value) => this.handleMenuChange(value)}>
-              <MenuItem value={1} primaryText="Buyer" />
-              <MenuItem value={2} primaryText="Seller" />
-            </DropDownMenu>
-          </div>
-        </MuiThemeProvider>
-        {this.state.loginComponent}
+      <div className="login-container">
+        <div className="login-box">
+          <MuiThemeProvider>
+            <AppBar
+              title="Login"
+            />
+          </MuiThemeProvider>
+          <MuiThemeProvider>
+            <div>
+              {/* <p>Login as:</p> */}
+              <DropDownMenu value={this.state.menuValue} onChange={(event, index, value) => this.handleMenuChange(value)}>
+                <MenuItem value={1} primaryText="Buyer" />
+                <MenuItem value={2} primaryText="Seller" />
+              </DropDownMenu>
+            </div>
+          </MuiThemeProvider>
+          {this.state.loginComponent}
+        </div>
       </div>
     );
   }

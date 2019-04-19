@@ -350,7 +350,7 @@ export const products = [{
 },
 ];
 
-export const categories = products.reduce((a, c) => {
+export const categories = [...products.reduce((a, c) => {
     a.add(c.ProductCategory);
     return a;
-}, new Set());
+}, new Set())];

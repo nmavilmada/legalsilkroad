@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Categories from './containers/Categories';
 import Loginscreen from "./Loginscreen";
 import CartContext from './CartContext';
@@ -19,24 +19,21 @@ const routes = [
     },
     {
         path: "/categories",
+        exact: true,
         component: () => <Categories />
     },
     {
-        path: "/login",
-        component: () => <h2>Login Page</h2>
+        path: "/categories/:cat",
+        component: Categories
     },
     {
         path: "/cart",
         component: () => <Cart />
     },
     {   
-        path: "/Login",
+        path: "/login",
         component: () => <Loginscreen />
 
-    },
-    {
-        path: "/Navbar",
-        component: () => <Navbar />
     }
 
 ];
@@ -68,7 +65,7 @@ function RouterContainer() {
                 </div>
 
                 <div className="footer">
-                    Some Footer
+                    © Legal Silk Road Inc. 2019 
                 </div>
             </div>
         </Router>
