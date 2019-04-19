@@ -47,5 +47,5 @@ var connection = mysql.createConnection({
              "success":"user registered sucessfully"
                });
          }
-        }
-         
+        });
+      }

@@ -52,22 +52,22 @@ export default function Cart(props) {
                         <React.Fragment
                             key={`cart-item-${i.id}`}
                         >
-                            <div>
+                            <div className="line">
                                 {i.id}
                             </div>
-                            <div>
+                            <div className="line">
                                 {i.name}
                             </div>
-                            <div>
-                                <img src={i.img} alt={i.name} style={{ width: '24px' }} />
+                            <div className="line">
+                                <img src={i.img} alt={i.name} style={{ width: '60px' }} />
                             </div>
-                            <div>
+                            <div className="line">
                                 {i.quantity}
                             </div>
-                            <div>
+                            <div className="line">
                                 {i.price * i.quantity}
                             </div>
-                            <div>
+                            <div className="line">
                                 <a href={'#remove'} onClick={() => cartContext.removeProduct(i.id)}>x</a>
                             </div>
                         </React.Fragment>
