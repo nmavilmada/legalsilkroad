@@ -19,7 +19,7 @@ export default function Categories({match}) {
                 filteredProducts.map((a, i) => {
                     return (
                         <ProductCard
-                            key={a.ProductDescripton}
+                            key={`${a.ProductID}-${category}`}
                             id={a.ProductID}
                             img={a.ProductImage}
                             description={a.ProductDescripton}

@@ -25,10 +25,12 @@ const routes = [
     },
     {
         path: "/categories/:cat",
+        exact: true,
         component: Categories
     },
     {
         path: "/cart",
+        exact: true,
         component: () => <Cart />
     },
     {   
