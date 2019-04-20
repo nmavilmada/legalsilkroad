@@ -369,7 +369,7 @@ export const products = [{
 },
 {
     "ProductID": "42",
-    "Price": 22,
+    "Price": 220.00,
     "ProductCategory": "Laptops",
     "ProductName": "Microsoft Surface Book",
     "ProductImage": "http://cdn.gadgetreview.com/wp-content/uploads/2015/12/Microsoft-Surface-Book-best-laptops-2015.jpg",
