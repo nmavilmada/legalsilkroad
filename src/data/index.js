@@ -410,7 +410,7 @@ export const products = [{
 },
 {
     "ProductID": "46",
-    "Price": 22,
+    "Price": 22.00,
     "ProductCategory": "Tools",
     "ProductName": "STANLEY 94-248 65 Piece Homeowner's DIY Tool Kit",
     "ProductImage": "https://www.thespruce.com/thmb/h6tpW5X0aFA3Vr5dTYLGldu2t30=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Stanley94-24865-PieceHomeownersToolKit-591cc69a5f9b58f4c0126dac.jpg",
