@@ -1,7 +1,7 @@
 .card {
     display: grid;
     /* height: 200px; */
-    grid-template-rows: 120px 1fr 25px;
+    grid-template-rows: 120px 1fr 65px;
     grid-template-columns: 1fr;
     justify-self: center;
 }
@@ -12,5 +12,5 @@
 }
 
 .p-btn button {
-    padding: 0 5px;
+    padding: 3px 5px;
 }

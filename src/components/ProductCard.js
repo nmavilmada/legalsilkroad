@@ -11,6 +11,9 @@ export default function ProductCard(props) {
                 <img src={props.img} alt={props.name} height={'100px'} width={'120px'} />
             </div>
             <div>
+            ${props.price.toFixed(2)}
+            </div>
+            <div>
                 { props.name } { itemCount > 0 && `(${itemCount} items)`}
             </div>
             <div className="p-btn">

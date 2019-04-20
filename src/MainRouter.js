@@ -5,6 +5,7 @@ import Loginscreen from "./Loginscreen";
 import CartContext from './CartContext';
 import Cart from './containers/Cart';
 import Navbar from './components/Navbar';
+import Landing from './components/Landing'
 import './MainRouter.css';
 
 
@@ -15,7 +16,7 @@ const routes = [
     {
         path: "/",
         exact: true,
-        component: () => <Categories />
+        component: () => <Landing />
     },
     {
         path: "/categories",

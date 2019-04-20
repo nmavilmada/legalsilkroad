@@ -65,7 +65,7 @@ export default function Cart(props) {
                                 {i.quantity}
                             </div>
                             <div className="line">
-                                {i.price * i.quantity}
+                                ${(i.price * i.quantity).toFixed(2)}
                             </div>
                             <div className="line">
                                 <a href={'#remove'} onClick={() => cartContext.removeProduct(i.id)}>x</a>
@@ -81,7 +81,7 @@ export default function Cart(props) {
             <div className="total-row"></div>
 
             <div className="total-row">
-                { totalPrice }
+                ${ totalPrice.toFixed(2) }
             </div>
 
             <div className="total-row"></div>

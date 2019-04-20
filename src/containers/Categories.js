@@ -23,7 +23,7 @@ export default function Categories({match}) {
                             id={a.ProductID}
                             img={a.ProductImage}
                             description={a.ProductDescripton}
-                            price={i * 10}
+                            price={a.Price}
                             name={a.ProductName}
                         />
                     )

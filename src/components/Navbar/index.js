@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-// import logo from './logo.png';
+// import logo from './logo.jpeg';
 import "./style.css";
 import CartContext from '../../CartContext';
 import { categories } from '../../data';
@@ -22,7 +22,7 @@ function Navbar() {
             <span className="icon-bar"></span>
           </button>
           <a href="#" className="navbar-brand">LegalSilkRoad</a>
-          <div className="logo" />
+          {/* <div className="logo" /> */}
           {/* <img scr={'https://developer.mozilla.org/static/img/web-docs-sprite.22a6a085cf14.svg'} alt="logo" width={'40px'} height={'40px'} /> */}
         </div>
         {/* <!-- Collection of nav links, forms, and other content for toggling --> */}
