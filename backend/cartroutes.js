@@ -1,13 +1,13 @@
 var mysql = require('mysql');
 var jsonfile = require('jsonfile');
 
-var connection = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : 'password',
-    database : 'collegeusers',
-    insecureAuth: false
-  });
+var connection = mysql.createConnection(process.env.CLEARDB_DATABASE_URL || {
+  host     : 'localhost',
+  user     : 'root',
+  password : 'password',
+  database : 'collegeusers',
+  insecureAuth: false
+});
 
   connection.connect(function(err){
     if(!err) {

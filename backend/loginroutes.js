@@ -2,7 +2,7 @@ var mysql = require('mysql');
 // var bcrypt = require('bcrypt');
 var jsonfile = require('jsonfile');
 
-var connection = mysql.createConnection({
+var connection = mysql.createConnection(process.env.CLEARDB_DATABASE_URL || {
   host     : 'localhost',
   user     : 'root',
   password : 'password',

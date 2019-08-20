@@ -7,11 +7,11 @@ var jsonfile = require('jsonfile');
 var mysql = require('mysql');
 // var bcrypt = require('bcrypt');
 
-var connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'password',
-  database: 'collegeusers',
+var connection = mysql.createConnection(process.env.CLEARDB_DATABASE_URL || {
+  host     : 'localhost',
+  user     : 'root',
+  password : 'password',
+  database : 'collegeusers',
   insecureAuth: false
 });
 connection.connect(function (err) {
